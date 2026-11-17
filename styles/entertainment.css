@@ -1,0 +1,450 @@
+
+/* General Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f3e5f5;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* Wrapper */
+
+.wrapper {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid #4a148c;
+    box-shadow: 0 8px 25px rgba(74,20,140,0.25);
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(
+        90deg,
+        #4a148c,
+        #9c27b0,
+        #e1bee7
+    );
+
+    color: white;
+    padding: 25px 30px;
+    border-bottom: 3px solid #311b92;
+}
+
+header h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 4px black;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #f3e5f5;
+    margin-left: 35px;
+}
+
+/* Navigation */
+
+nav {
+    background-color: #1a0033;
+}
+
+nav ul {
+    list-style: none;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+nav ul li {
+    float: left;
+    border-right: 1px solid #6a1b9a;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #7b1fa2;
+    color: #ffd54f;
+}
+
+/* Main Layout */
+
+.main-layout {
+    padding: 25px;
+}
+
+/* Content */
+
+.content-section h2 {
+    color: #6a1b9a;
+    font-size: 1.75em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ce93d8;
+    padding-bottom: 5px;
+}
+
+.content-section p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Carousel Heading */
+
+.carousel-heading {
+    color: #6a1b9a;
+    margin: 20px 0 15px;
+    border-bottom: 2px solid #ce93d8;
+    padding-bottom: 5px;
+}
+
+/* Carousel */
+
+.carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ce93d8;
+    border-radius: 8px;
+    background-color: #faf4fc;
+    transition: box-shadow 0.4s ease;
+}
+
+.carousel:hover {
+    box-shadow: 0 8px 20px rgba(106,27,154,0.2);
+}
+
+/* Hide Radio Buttons */
+
+.carousel input {
+    display: none;
+}
+
+/* Carousel Track */
+
+.carousel-track {
+    display: flex;
+    width: 500%;
+    transition: transform 0.5s ease;
+}
+
+.carousel figure {
+    width: 20%;
+    flex-shrink: 0;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.carousel img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #6a1b9a;
+    border-radius: 6px;
+}
+
+.carousel figcaption {
+    color: #4a148c;
+    font-weight: 600;
+    padding: 8px;
+}
+
+/* Slide Control */
+
+#slide1:checked ~ .carousel-track {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .carousel-track {
+    transform: translateX(-20%);
+}
+
+#slide3:checked ~ .carousel-track {
+    transform: translateX(-40%);
+}
+
+#slide4:checked ~ .carousel-track {
+    transform: translateX(-60%);
+}
+
+#slide5:checked ~ .carousel-track {
+    transform: translateX(-80%);
+}
+
+/* Arrow Buttons */
+
+.arrows label {
+    display: none;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Show Correct Arrows */
+
+#slide1:checked ~ .arrows .p5,
+#slide1:checked ~ .arrows .n2,
+#slide2:checked ~ .arrows .p1,
+#slide2:checked ~ .arrows .n3,
+#slide3:checked ~ .arrows .p2,
+#slide3:checked ~ .arrows .n4,
+#slide4:checked ~ .arrows .p3,
+#slide4:checked ~ .arrows .n5,
+#slide5:checked ~ .arrows .p4,
+#slide5:checked ~ .arrows .n1 {
+    display: block;
+}
+
+.arrows label:hover {
+    background-color: #9c27b0;
+}
+
+/* Description */
+
+.description {
+    margin-top: 25px;
+}
+
+.description h3 {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+/* Resource Cards */
+
+.resource-box {
+    background-color: #faf4fc;
+    border: 1px solid #ce93d8 !important;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.resource-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(106,27,154,0.25) !important;
+    border-color: #6a1b9a !important;
+}
+
+.resource-box h3 {
+    color: #4a148c;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.resource-box:hover h3 {
+    color: #9c27b0;
+}
+
+.resource-box p {
+    margin-bottom: 15px;
+}
+
+/* Audio Player */
+
+audio {
+    width: 100%;
+}
+
+/* PDF Button */
+
+.btn-purple {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.btn-purple:hover {
+    background-color: #9c27b0;
+    color: white;
+}
+
+/* Sidebar */
+
+.sidebar {
+    height: fit-content;
+    background-color: #faf4fc;
+    padding: 15px;
+    border: 1px solid #ce93d8;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
+}
+
+.sidebar:hover {
+    box-shadow: 0 5px 15px rgba(106,27,154,0.15);
+}
+
+.sidebar h3 {
+    color: #4a148c;
+    font-size: 1.15em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ba68c8;
+    padding-bottom: 5px;
+}
+
+.sidebar .resource-heading {
+    margin-top: 25px;
+}
+
+.sidebar ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #6a1b9a;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #ab47bc;
+    text-decoration: underline;
+    transform: translateX(6px);
+}
+
+/* Target Sections */
+
+#audio-section,
+#pdf-section {
+    scroll-margin-top: 20px;
+}
+
+/* Footer */
+
+footer {
+    background: linear-gradient(
+        90deg,
+        #4a148c,
+        #8e24aa
+    );
+
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    border-top: 3px solid #311b92;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+
+    .wrapper {
+        width: 95%;
+    }
+
+    .main-layout {
+        padding: 18px;
+    }
+
+    .sidebar {
+        margin-top: 10px;
+    }
+
+}
+
+/* Mobile */
+
+@media screen and (max-width: 480px) {
+
+    header h1 {
+        font-size: 2.1em;
+        text-align: center;
+    }
+
+    header p {
+        margin-left: 0;
+        text-align: center;
+        font-size: 0.95em;
+    }
+
+    nav ul li {
+        float: none;
+        width: 100%;
+        border-bottom: 1px solid #6a1b9a;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+
+    .carousel img {
+        height: 180px;
+    }
+
+    .arrows label {
+        font-size: 18px;
+        padding: 7px 11px;
+    }
+
+    .content-section h2 {
+        font-size: 1.4em;
+    }
+
+    .carousel-heading {
+        font-size: 1.25em;
+    }
+
+}
